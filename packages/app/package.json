@@ -1,10 +1,22 @@
 {
     "name": "@ocds/app",
     "version": "0.1.0",
+    "description": "Local-first telemetry viewer for Open Catalyst Data Studio",
+    "author": "Open Catalyst Data Studio contributors",
+    "repository": "https://github.com/KJBurnett/open-garmin-catalyst-data-studio",
+    "build": {
+        "appId": "org.opencatalyst.datastudio",
+        "productName": "Open Catalyst Data Studio",
+        "executableName": "open-catalyst-data-studio",
+        "linux": {
+            "category": "Science",
+            "target": ["AppImage"]
+        }
+    },
     "main": "dist-electron/main.js",
     "scripts": {
         "dev": "vite",
-        "build": "tsc && vite build && electron-builder",
+        "build": "tsc && vite build && electron-builder --publish never",
         "preview": "vite preview"
     },
     "dependencies": {
@@ -19,7 +31,7 @@
         "@types/react": "^18.2.48",
         "@types/react-dom": "^18.2.18",
         "@vitejs/plugin-react": "^4.2.1",
-        "electron": "^28.2.0",
+        "electron": "28.3.3",
         "electron-builder": "^24.9.1",
         "typescript": "^5.3.3",
         "vite": "^5.0.12",
